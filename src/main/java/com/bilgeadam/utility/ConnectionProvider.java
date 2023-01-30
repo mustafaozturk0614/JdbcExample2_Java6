@@ -50,17 +50,16 @@ public class ConnectionProvider {
 
 
 
-        public Optional<ResultSet> getData( String sql){
-            if (openConnection()){
+        public Optional<ResultSet> getData(PreparedStatement preparedStatement){
+
                 try {
-                    preparedStatement=DatabaseConnection.getConnection().prepareStatement(sql);
                     resultSet=preparedStatement.executeQuery();
                     closeConnection();
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                     closeConnection();
                 }
-            }
+
             return Optional.ofNullable(resultSet);
         }
 

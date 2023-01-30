@@ -5,6 +5,7 @@ public class Futbolcu {
     private String isim;
     private String mevki;
     private int formaNo;
+    private  Long deger;
     private Long takimId;
 
     public Futbolcu(String isim, String mevki, int formaNo, Long takimId) {
@@ -14,10 +15,34 @@ public class Futbolcu {
         this.takimId = takimId;
     }
 
+
+    public Futbolcu(String isim, String mevki, int formaNo, Long deger, Long takimId) {
+        this.isim = isim;
+        this.mevki = mevki;
+        this.formaNo = formaNo;
+        this.takimId = takimId;
+        this.deger=deger;
+    }
+    public Futbolcu(Long id,String isim, String mevki, int formaNo, Long deger, Long takimId) {
+        this.isim = isim;
+        this.mevki = mevki;
+        this.formaNo = formaNo;
+        this.takimId = takimId;
+        this.deger=deger;
+        this.id=id;
+    }
+
     public Futbolcu(String isim, String mevki, int formaNo) {
         this.isim = isim;
         this.mevki = mevki;
         this.formaNo = formaNo;
+    }
+    public Long getDeger() {
+        return deger;
+    }
+
+    public void setDeger(Long deger) {
+        this.deger = deger;
     }
 
     public Long getId() {
@@ -67,6 +92,7 @@ public class Futbolcu {
                 ", isim='" + isim + '\'' +
                 ", mevki='" + mevki + '\'' +
                 ", formaNo=" + formaNo +
+                ", deger=" + deger +
                 ", takimId=" + takimId +
                 '}';
     }
